@@ -29,13 +29,13 @@ public:
 
 void CPila::Push(char le){
 	if(fin==NULL){
-		fin=new(NPila);
+		fin=new(NPila);					//Se crea un nodo y el puntero fin apuntara a el mismo
 		fin->L=le;
-		inicial=fin;
-		inicial=inicial->siguiente;
+		inicial=fin;					//Le indicamos al puntero inicio que apunte a donde apunta el puntero fin
+		inicial=inicial->siguiente;			//Le indicamos al puntero siguiente del puntero inicio que apunte a nulo.
 	}
 	else{
-		aux=new(Ncola);
+		aux=new(Ncola);					//En esta parte de la funcion se apilan las colas solo que al reves.
 		aux->L=le;
 		aux->siguiente=fin;
 		fin=aux;
@@ -70,7 +70,7 @@ void CPila::Pop(){
 		cout<<"No hay ningun valor";
 	}
 	else{
-		aux=fin->siguiente;
-		fin=aux;
+		aux=fin->siguiente;			//El puntero aux apuntara al penultimo nodo
+		fin=aux;				//Le indicamos al puntero fin que apunte al mismo nodo que apunta aux
 	}
 }
